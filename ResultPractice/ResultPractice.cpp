@@ -2,26 +2,26 @@
 //
 
 #include <iostream>
-#include "Result3.h"
+#include "Result4.h"
 
-Result<int, std::string> ParseDigit(char c) {
+Result<int, const char*> ParseDigit(char c) {
     if (c < '0' || '9' < c) {
-        return Error("invalid character");
+        return Error<int, const char*>("invalid character");
     }
 
-    return Ok(c - '0');
+    return Ok<int, const char*>(c - '0');
 }
 
 int main()
 {
-    Result<int, std::string> result_ok = ParseDigit('4');
+    Result<int, const char*> result_ok = ParseDigit('4');
     if (result_ok.Valid())
     {
         int num = result_ok.Get();
         // 4
     }
 
-    Result<int, std::string> result_err = ParseDigit('g');
+    Result<int, const char*> result_err = ParseDigit('g');
     if (!result_err.Valid())
     {
         std::string num = result_err.GetError();
