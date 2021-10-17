@@ -64,6 +64,7 @@ struct Result
 
 	Result(Okay<T>&& t) : ok_(std::move(t.value)), valid(true) {};
 	Result(Error<E>&& t) : err_(std::move(t.value)), valid(false) {};
+
 	constexpr Result(Result<T, E> const& e) : valid(e.valid)
 	{
 		if (valid)
