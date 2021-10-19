@@ -1,5 +1,7 @@
 #pragma once
 
+// ‚±‚ê‚Íƒ{ƒc
+
 template <class T1, class T2> class Result;
 
 template <class T1, class T2>

@@ -67,10 +67,6 @@ void StructRetTest()
         std::string str_class = ret_class.Get().sz;
         assert(str_class.compare("0123456789012345678901234567890") == 0);
     }
-
-    {
-
-    }
 }
 
 

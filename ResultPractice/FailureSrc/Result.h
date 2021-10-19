@@ -1,4 +1,5 @@
 #pragma once
+// ‚±‚ê‚Íƒ{ƒc
 
 template <typename T, typename E>
 struct Result {

@@ -1,4 +1,5 @@
 #pragma once
+// ‚±‚ê‚Íƒ{ƒc
 
 template <class L, class R>
 class Either

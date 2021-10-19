@@ -1,5 +1,7 @@
 #pragma once
 
+// ‚±‚ê‚Íƒ{ƒc
+
 template<class T, class E>
 class Result
 {

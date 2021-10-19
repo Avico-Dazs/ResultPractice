@@ -1,10 +1,11 @@
 #pragma once
-
-#pragma once
+// ‚±‚ê‚Íƒ{ƒc
 
 #include <iostream>
 #include <functional>
 #include <type_traits>
+
+
 
 namespace types {
     template<typename T>

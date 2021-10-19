@@ -142,12 +142,6 @@
     <ClCompile Include="ResultPractice.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Result.h" />
-    <ClInclude Include="Result2.h" />
-    <ClInclude Include="Result3.h" />
-    <ClInclude Include="Result4.h" />
-    <ClInclude Include="EitherSample.h" />
-    <ClInclude Include="Result5.h" />
     <ClInclude Include="Result6.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
