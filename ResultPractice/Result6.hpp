@@ -10,14 +10,14 @@ struct Okay
 template <class T>
 constexpr Okay<T> Ok(T const& x)
 {
-	return { x };
-}
-
-template<class T>
-Okay<T> Ok(T&& x)
-{
 	return { std::move(x) };
 }
+
+//template<class T>
+//Okay<T> Ok(T x)
+//{
+//	return { std::move(x) };
+//}
 
 template<class E>
 struct Error
@@ -28,14 +28,14 @@ struct Error
 template <class E>
 constexpr Error<E> Err(E const& x)
 {
-	return { x };
-}
-
-template<class E>
-Error<E> Err(E&& x)
-{
 	return { std::move(x) };
 }
+
+//template<class E>
+//Error<E> Err(E&& x)
+//{
+//	return { std::move(x) };
+//}
 
 template<class T, class E>
 struct Result

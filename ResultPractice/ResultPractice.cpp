@@ -7,6 +7,8 @@ using namespace std;
 using namespace std::string_literals;
 #include "Result6.hpp"
 
+#include <cassert>
+
 Result<int, std::string> ParseDigit(char c) 
 {
     if (c < '0' || '9' < c) 
@@ -45,11 +47,30 @@ void StructRetTest()
         wchar_t wsz[1024];
         unsigned long ul;
     };
-    S1 s1 = { 1234, "0123456789012345678901234567890" };
-    Result<S1, S2> ret = Ok(move(s1));
 
-    TestClass c1 = { 1234, "0123456789012345678901234567890" };
-    Result< TestClass, S1> ret_class = Ok(move(c1));
+    {
+        S1 s1 = { 1234, "0123456789012345678901234567890" };
+        Result<S1, S2> ret = Ok(s1);
+
+        assert(ret.Valid());
+        assert(ret.Get().n == 1234);
+        std::string str1 = ret.Get().sz;
+        assert(str1.compare("0123456789012345678901234567890") == 0);
+    }
+
+    {
+        TestClass c1 = { 1234, "0123456789012345678901234567890" };
+        Result< TestClass, S1> ret_class = Ok(c1);
+
+        assert(ret_class.Valid());
+        assert(ret_class.Get().n == 1234);
+        std::string str_class = ret_class.Get().sz;
+        assert(str_class.compare("0123456789012345678901234567890") == 0);
+    }
+
+    {
+
+    }
 }
 
 
